@@ -1,5 +1,5 @@
 " Leader
-let mapleader = " "
+let mapleader = ";"
 
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
@@ -12,8 +12,7 @@ set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
+" Switch syntax highlighting on, when the terminal has colors " Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
@@ -114,8 +113,6 @@ endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <S-Tab> <c-n>
 
-" Switch between the last two files
-nnoremap <Leader><Leader> <c-^>
 
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
@@ -123,22 +120,28 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
-" vim-test mappings
-nnoremap <silent> <Leader>t :TestFile<CR>
-nnoremap <silent> <Leader>s :TestNearest<CR>
-nnoremap <silent> <Leader>l :TestLast<CR>
-nnoremap <silent> <Leader>a :TestSuite<CR>
-nnoremap <silent> <Leader>gt :TestVisit<CR>
-
 " Run commands that require an interactive shell
 nnoremap <Leader>r :RunInInteractiveShell<space>
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
 
+" Easier quitting
+nmap <leader>q :qw!<CR>
+
+" Switch between the last two files
+nnoremap <Leader>e <c-^>
+
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
+
+" Remap opening splits
+nnoremap <leader>v :vsplit <CR>
+nnoremap <leader>h :sp <CR>
+
+" Remap exiting out of modes
+inoremap <leader><leader> <Esc>
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j

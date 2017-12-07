@@ -46,3 +46,4 @@ _load_settings "$HOME/.zsh/configs"
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

@@ -15,5 +15,8 @@ alias s="rspec"
 # Pretty print the path
 alias path='echo $PATH | tr -s ":" "\n"'
 
+# python alias
+alias python="python3"
+
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local

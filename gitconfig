@@ -3,7 +3,7 @@
 [push]
   default = current
 [color]
-  ui = auto
+	ui = true
 [alias]
   aa = add --all
   ap = add --patch
@@ -25,3 +25,6 @@
   autosquash = true
 [include]
   path = ~/.gitconfig.local
+[user]
+	name = Nikola Novakovic
+	email = nikola.novakovic9@gmail.com
