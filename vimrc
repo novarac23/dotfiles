@@ -127,7 +127,7 @@ nnoremap <Leader>r :RunInInteractiveShell<space>
 let g:html_indent_tags = 'li\|p'
 
 " Easier quitting
-nmap <leader>q :qw!<CR>
+nmap <leader>q :qa!<CR>
 
 " Switch between the last two files
 nnoremap <Leader>e <c-^>
