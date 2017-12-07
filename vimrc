@@ -127,7 +127,10 @@ nnoremap <Leader>r :RunInInteractiveShell<space>
 let g:html_indent_tags = 'li\|p'
 
 " Easier quitting
-nmap <leader>q :qa!<CR>
+nmap <leader>q :wq!<CR>
+
+" Set a color scheme ( from vim-colorschemes plugin )
+colorscheme dracula
 
 " Switch between the last two files
 nnoremap <Leader>e <c-^>
