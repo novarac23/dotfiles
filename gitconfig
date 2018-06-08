@@ -28,3 +28,8 @@
 [user]
 	name = Nikola Novakovic
 	email = nikola.novakovic9@gmail.com
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

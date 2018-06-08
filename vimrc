@@ -120,6 +120,10 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
+" Shortucts for runnig specs inside of editor /w vim-test
+nnoremap <leader>n :TestNearest<CR>
+nnoremap <leader>f :TestFile<CR>
+
 " Run commands that require an interactive shell
 nnoremap <Leader>r :RunInInteractiveShell<space>
 

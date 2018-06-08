@@ -47,3 +47,12 @@ _load_settings "$HOME/.zsh/configs"
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# add nodejs to path
+export PATH="$HOME/.npm-packages/bin:$PATH"
+
+# python virtualwrapper specific envs
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME="$HOME/Projects"
+export VIRTUALENVWRAPPER_PYTHON="/usr/local/bin/python3"
+source /usr/local/bin/virtualenvwrapper.sh
