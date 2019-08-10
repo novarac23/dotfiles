@@ -18,5 +18,17 @@ alias path='echo $PATH | tr -s ":" "\n"'
 # python alias
 alias python="python3"
 
+# git aliases
+alias gb="git branch"
+alias gs="git status"
+alias gaa="git add --all"
+alias gcm="git commit -m"
+
+# list common commands out
+alias typeless="cat ~/.zhistory | cut -d \";\" -f 2- | cut -d ' ' -f 1-4 | sort | uniq -c | sort -g"
+
+# safechain specific
+alias load_data_sc_api='python manage.py migrate && python manage.py loaddata ./rest/fixtures/default_setup.json && python manage.py loaddata ./rest/fixtures/email_templates.json'
+
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local

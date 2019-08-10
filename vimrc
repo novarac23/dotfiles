@@ -43,18 +43,6 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile Appraisals set filetype=ruby
   autocmd BufRead,BufNewFile *.md set filetype=markdown
   autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
-
-  " ALE linting events
-  if g:has_async
-    set updatetime=1000
-    let g:ale_lint_on_text_changed = 0
-    autocmd CursorHold * call ale#Lint()
-    autocmd CursorHoldI * call ale#Lint()
-    autocmd InsertEnter * call ale#Lint()
-    autocmd InsertLeave * call ale#Lint()
-  else
-    echoerr "The thoughtbot dotfiles require NeoVim or Vim 8"
-  endif
 augroup END
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
@@ -119,7 +107,6 @@ nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
-
 " Shortucts for runnig specs inside of editor /w vim-test
 nnoremap <leader>n :TestNearest<CR>
 nnoremap <leader>f :TestFile<CR>
@@ -134,7 +121,8 @@ let g:html_indent_tags = 'li\|p'
 nmap <leader>q :wq!<CR>
 
 " Set a color scheme ( from vim-colorschemes plugin )
-colorscheme dracula
+" colorscheme railscasts
+colorscheme gruvbox
 
 " Switch between the last two files
 nnoremap <Leader>e <c-^>
@@ -169,6 +157,46 @@ set complete+=kspell
 
 " Always use vertical diffs
 set diffopt+=vertical
+
+" vertical line coloring
+highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
+
+" airline config
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.crypt = '🔒'
+let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.maxlinenr = '㏑'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.spell = 'Ꞩ'
+let g:airline_symbols.notexists = 'Ɇ'
+let g:airline_symbols.whitespace = 'Ξ'
+
+let g:airline_right_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_left_alt_sep= ''
+let g:airline_left_sep = ''
+
+" w0rp/ale config
+let g:ale_completion_enabled = 0
+let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'python': ['autopep8', 'black', 'isort', 'yapf', 'add_blank_lines_for_python_control_statements']}
+nnoremap <leader>f :ALEFix<CR>
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")

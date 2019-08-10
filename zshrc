@@ -51,8 +51,14 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # add nodejs to path
 export PATH="$HOME/.npm-packages/bin:$PATH"
 
-# python virtualwrapper specific envs
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME="$HOME/Projects"
-export VIRTUALENVWRAPPER_PYTHON="/usr/local/bin/python3"
-source /usr/local/bin/virtualenvwrapper.sh
+# pyenb virtualenv
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+export PATH="/usr/local/opt/postgresql@10/bin:$PATH:/Users/nikolanovakovic/bin"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/nikolanovakovic/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/nikolanovakovic/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/nikolanovakovic/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/nikolanovakovic/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
