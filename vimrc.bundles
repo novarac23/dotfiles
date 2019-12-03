@@ -41,6 +41,8 @@ Plug 'nvie/vim-flake8'
 Plug 'elmcast/elm-vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'w0rp/ale'
+Plug 'connorholyday/vim-snazzy'
+
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local

@@ -11,6 +11,7 @@ set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
+set encoding=utf-8 " set encoding
 
 " Switch syntax highlighting on, when the terminal has colors " Also switch on highlighting the last used search pattern.
 if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
@@ -123,6 +124,7 @@ nmap <leader>q :wq!<CR>
 " Set a color scheme ( from vim-colorschemes plugin )
 " colorscheme railscasts
 colorscheme gruvbox
+" colorscheme snazzy
 
 " Switch between the last two files
 nnoremap <Leader>e <c-^>
@@ -155,43 +157,38 @@ set spellfile=$HOME/.vim-spell-en.utf-8.add
 " Autocomplete with dictionary words when spell check is on
 set complete+=kspell
 
-" Always use vertical diffs
-set diffopt+=vertical
-
 " vertical line coloring
 highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 
-" airline config
+" air-line
 let g:airline_powerline_fonts = 1
 
 if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
+    let g:airline_symbols = {}
 endif
 
-
+" unicode symbols
 let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '«'
 let g:airline_right_sep = '◀'
-let g:airline_symbols.crypt = '🔒'
-let g:airline_symbols.linenr = '☰'
 let g:airline_symbols.linenr = '␊'
 let g:airline_symbols.linenr = '␤'
 let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.maxlinenr = '㏑'
 let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
-let g:airline_symbols.spell = 'Ꞩ'
-let g:airline_symbols.notexists = 'Ɇ'
 let g:airline_symbols.whitespace = 'Ξ'
 
-let g:airline_right_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_left_alt_sep= ''
+" airline symbols
 let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
 
 " w0rp/ale config
 let g:ale_completion_enabled = 0
