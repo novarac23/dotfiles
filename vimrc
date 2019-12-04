@@ -195,6 +195,13 @@ let g:ale_completion_enabled = 0
 let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'python': ['autopep8', 'black', 'isort', 'yapf', 'add_blank_lines_for_python_control_statements']}
 nnoremap <leader>f :ALEFix<CR>
 
+" clear whitespace
+fun! TrimWhitespace()
+  let l:save = winsaveview()
+  keeppatterns %s/\s\+$//e
+  call winrestview(l:save)
+endfun
+
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
