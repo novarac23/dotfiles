@@ -47,3 +47,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+. $(brew --prefix asdf)/asdf.sh
+
+. $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
